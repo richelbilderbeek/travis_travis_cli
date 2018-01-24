@@ -12,6 +12,7 @@ install:
   - sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
   # Add things added when starting interactive mode
   - sudo gem pristine executable-hooks --version 1.3.2
+  - sudo gem pristine ffi --version 1.9.18
   - sudo gem pristine gem-wrappers --version 1.3.2
   - sudo gem pristine gem-wrappers --version 1.2.7
   - sudo gem pristine nokogiri --version 1.8.1
