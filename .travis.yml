@@ -13,7 +13,7 @@ install:
   - ruby -v
   # Use https://github.com/travis-ci/travis.rb
   - sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
-  - travis version
+  - travis --version
 
 script: 
   - travis status --repo richelbilderbeek/correct_cpp
