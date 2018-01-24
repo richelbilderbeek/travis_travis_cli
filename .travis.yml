@@ -1,7 +1,14 @@
 sudo: required
 
+
 install:
-  - sudo apt-get install ruby-dev
+  # From https://github.com/travis-ci/travis.rb/issues/391#issuecomment-208376668
+  - sudo apt-get install python-software-properties
+  - sudo apt-add-repository ppa:brightbox/ruby-ng
+  - sudo apt-get update
+  - sudo apt-get install ruby2.1 ruby-switch
+  - sudo ruby-switch --set ruby2.1
+  - sudo apt-get install ruby2.1-dev
   # Must have at least Ruby 1.9.3 (2.0.0 recommended) for travis CLI
   - ruby -v
   # Use https://github.com/travis-ci/travis.rb
