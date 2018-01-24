@@ -1,3 +1,5 @@
+sudo: required
+
 install:
   - sudo apt-get install ruby-dev
   # Must have at least Ruby 1.9.3 (2.0.0 recommended) for travis CLI
