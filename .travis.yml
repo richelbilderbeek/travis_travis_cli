@@ -15,15 +15,15 @@ install:
   - sudo gem pristine gem-wrappers --version 1.3.2
   - sudo gem pristine gem-wrappers --version 1.2.7
   - sudo gem pristine nokogiri --version 1.8.1
-  # From https://stackoverflow.com/a/39866401
-  - sudo gem pristine --all
+  # From https://stackoverflow.com/a/39866401, useless
+  # - sudo gem pristine --all
   # Show travis CLI version
-  - travis --version --no-interactive
+  - travis --version --no-interactive &2>/dev/null
 
 script: 
   # Show status 'passed'
   - travis status --repo richelbilderbeek/correct_cpp --no-interactive
   # Show the number of passed repos
-  - n_pass=`travis status --repo richelbilderbeek/correct_cpp --no-interactive | egrep "passed" | wc --words | cut -f 1 -d " "`; echo $n_pass
+  - n_pass=`travis status --repo richelbilderbeek/correct_cpp --no-interactive &2>/dev/null | egrep "passed" | wc --words | cut -f 1 -d " "`; echo $n_pass
   # Show the number of passed repos
-  - n_pass=`travis status --repo richelbilderbeek/correct_cpp --no-interactive | egrep "failed" | wc --words | cut -f 1 -d " "`; if [[ $n_pass != 0 ]]; then exit 1; fi 
+  - n_pass=`travis status --repo richelbilderbeek/correct_cpp --no-interactive &2>/dev/null | egrep "failed" | wc --words | cut -f 1 -d " "`; if [[ $n_pass != 0 ]]; then exit 1; fi 
