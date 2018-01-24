@@ -16,6 +16,8 @@ install:
   - sudo gem pristine gem-wrappers --version 1.2.7
   - sudo gem pristine nokogiri --version 1.8.1
   - sudo gem pristine ffi --version 1.9.18
+  # From https://stackoverflow.com/a/39866401
+  - sudo gem pristine --all
   # Show travis CLI version
   - travis --version --no-interactive
 
