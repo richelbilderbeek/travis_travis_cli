@@ -27,4 +27,4 @@ script:
   # Show the number of passed repos
   - n_pass=`travis status --repo richelbilderbeek/correct_cpp --no-interactive | egrep "passed" | wc --words | cut -f 1 -d " "`; echo $n_pass
   # Show the number of passed repos
-  - n_pass=`travis status --repo richelbilderbeek/correct_cpp --no-interactive | egrep "passed" | wc --words | cut -f 1 -d " "`; if [[ $n_pass != 0 ]]; then echo "ERROR"; exit 1; fi 
+  - n_pass=`travis status --repo richelbilderbeek/correct_cpp --no-interactive | egrep "failed" | wc --words | cut -f 1 -d " "`; if [[ $n_pass != 0 ]]; then exit 1; fi 
